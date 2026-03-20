@@ -5,30 +5,56 @@ const feedOptions = [
 	{
 		title: "Chicken Feed",
 		description: "Scratch, layer blends, and simple staples for hens with places to be.",
-		accent: "Soft grains and everyday pecking fuel"
+		accent: "Soft grains and everyday pecking fuel",
+		icon: "Egg basket",
+		emoji: "🐓",
+		tint: "bg-[#d9e7c1]"
 	},
 	{
 		title: "Goat Chow",
 		description: "Balanced feed for curious fence-testers and general farm comedians.",
-		accent: "Made for rambunctious barn personalities"
+		accent: "Made for rambunctious barn personalities",
+		icon: "Barn diplomacy",
+		emoji: "🐐",
+		tint: "bg-[#ecd7b2]"
 	},
 	{
 		title: "Horse Feed",
 		description: "Reliable mixes for pasture cruisers, trail buddies, and hard-working hooves.",
-		accent: "Steady energy, easy routine"
+		accent: "Steady energy, easy routine",
+		icon: "Trail-ready",
+		emoji: "🐎",
+		tint: "bg-[#ded6cb]"
 	},
 	{
 		title: "Rabbit Pellets",
 		description: "Clean, practical pellets for little hoppers with very strong opinions.",
-		accent: "Small-batch feel, everyday basics"
+		accent: "Small-batch feel, everyday basics",
+		icon: "Garden-side",
+		emoji: "🐇",
+		tint: "bg-[#dbe9df]"
 	}
 ];
 
 const reasons = [
-	"We traded sprint planning for sunrise chores.",
-	"No hype words, no growth hacks, no AI slop. Just solid feed.",
-	"We keep the catalog focused on staples animals actually need.",
-	"Everything is built to feel friendly, local, and easy to buy."
+	{
+		title: "Small catalog, strong opinions",
+		copy: "We trade endless SKUs for dependable staples that earn their place in the barn."
+	},
+	{
+		title: "Farm rhythm over app rhythm",
+		copy: "We traded sprint planning for sunrise chores, feed scoops, and less nonsense overall."
+	},
+	{
+		title: "Friendly on purpose",
+		copy: "Everything is meant to feel local, calm, and easy to buy without being talked at."
+	}
+];
+
+const marketNotes = [
+	"Locally packed blends",
+	"Pickup-ready stock board",
+	"No futuristic branding exercises"
 ];
 ---
 
@@ -45,183 +71,221 @@ const reasons = [
 			content="Farmagora sells honest animal feed with a relaxed farm vibe, built by former software engineers who left the AI churn behind."
 		/>
 	</head>
-	<body class="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(233,241,221,0.95),_rgba(248,244,231,1)_55%)] text-stone-800">
-		<div class="relative overflow-hidden">
-			<div class="absolute inset-x-0 top-0 -z-10 h-[38rem] bg-[linear-gradient(180deg,rgba(131,167,114,0.24),rgba(248,244,231,0))]"></div>
-			<div class="absolute left-[-8rem] top-24 -z-10 h-72 w-72 rounded-full bg-emerald-200/50 blur-3xl"></div>
-			<div class="absolute right-[-5rem] top-12 -z-10 h-80 w-80 rounded-full bg-lime-100/60 blur-3xl"></div>
+	<body class="min-h-screen bg-[var(--bg-base)] text-[var(--ink)]">
+		<div class="page-grain pointer-events-none fixed inset-0 -z-10 opacity-60"></div>
+		<div class="pointer-events-none fixed inset-x-0 top-0 -z-20 h-[34rem] bg-[radial-gradient(circle_at_top,rgba(222,191,133,0.22),transparent_60%)]"></div>
+		<div class="pointer-events-none fixed inset-y-0 left-0 -z-20 w-32 bg-[linear-gradient(90deg,rgba(52,71,42,0.08),transparent)]"></div>
+		<div class="pointer-events-none fixed inset-y-0 right-0 -z-20 w-32 bg-[linear-gradient(270deg,rgba(52,71,42,0.08),transparent)]"></div>
 
-			<main class="mx-auto flex max-w-6xl flex-col gap-16 px-6 py-8 sm:px-10 lg:px-12 lg:py-10">
-				<header class="flex items-center justify-between rounded-full border border-white/60 bg-white/60 px-5 py-3 backdrop-blur-sm">
-					<div class="flex items-center gap-3">
-						<img
-							src="/favicon.png"
-							alt="Farmagora farm icon"
-							class="h-15 w-15 rounded-full border border-emerald-900/10 bg-[#f4efdf] object-cover p-1 shadow-sm shadow-emerald-950/10"
-						/>
-						<div>
-						<p class="text-xl font-semibold uppercase tracking-[0.3em] text-emerald-800">Farmagora</p>
-						<p class="text-sm text-stone-600">Feed store for the post-tech barn era</p>
+		<div class="relative overflow-hidden">
+			<div class="absolute left-[-8rem] top-20 -z-10 h-72 w-72 rounded-full bg-[rgba(124,154,98,0.26)] blur-3xl"></div>
+			<div class="absolute right-[-6rem] top-16 -z-10 h-80 w-80 rounded-full bg-[rgba(214,174,109,0.2)] blur-3xl"></div>
+			<div class="absolute inset-x-0 top-0 -z-10 h-[42rem] bg-[linear-gradient(180deg,rgba(255,251,241,0.82),rgba(246,238,220,0.1))]"></div>
+
+			<main class="mx-auto flex max-w-7xl flex-col gap-10 px-5 py-6 sm:px-8 lg:px-12 lg:py-8">
+				<header class="fade-in rounded-[2rem] border border-[rgba(70,52,31,0.12)] bg-[rgba(255,250,240,0.76)] px-5 py-4 shadow-[0_24px_60px_-42px_rgba(70,52,31,0.45)] backdrop-blur-sm sm:px-7">
+					<div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+						<div class="flex items-center gap-4">
+							<img
+								src="/favicon.png"
+								alt="Farmagora farm icon"
+								class="h-16 w-16 rounded-[1.4rem] border border-[rgba(70,52,31,0.12)] bg-[#f6efdd] object-cover p-2 shadow-[0_12px_30px_-24px_rgba(47,61,35,0.8)]"
+							/>
+							<div>
+								<p class="font-[var(--font-display)] text-2xl uppercase tracking-[0.24em] text-[var(--olive-deep)]">Farmagora</p>
+								<p class="text-sm tracking-[0.08em] text-[var(--ink-soft)]">Field notes, feed sacks, and a healthier internet absence.</p>
+							</div>
 						</div>
-					</div>
-					<div class="hidden rounded-full bg-emerald-900 px-4 py-2 text-sm font-medium text-emerald-50 sm:block">
-						Locally packed, casually sold
+						<div class="flex flex-wrap gap-2 text-xs uppercase tracking-[0.2em] text-[var(--olive-deep)] sm:text-sm">
+							{marketNotes.map((note) => (
+								<span class="rounded-full border border-[rgba(70,52,31,0.1)] bg-[rgba(255,255,255,0.6)] px-4 py-2">{note}</span>
+							))}
+						</div>
 					</div>
 				</header>
 
-				<section class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-					<div class="space-y-7">
-						<div class="inline-flex items-center rounded-full border border-emerald-900/10 bg-white/70 px-4 py-2 text-sm text-emerald-900 shadow-sm shadow-emerald-950/5">
-							<span class="mr-2 text-base">🌿</span>
-							We quit shipping features and started stacking hay.
+				<section class="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+					<div class="fade-in space-y-8 lg:pr-8" style="animation-delay: 0.08s;">
+						<div class="inline-flex items-center gap-3 rounded-full border border-[rgba(70,52,31,0.14)] bg-[rgba(255,250,240,0.7)] px-4 py-2 text-sm text-[var(--olive-deep)] shadow-[0_10px_28px_-24px_rgba(70,52,31,0.9)]">
+							<span class="flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(124,154,98,0.18)] text-base">🌿</span>
+							Farm-market energy, not startup energy.
 						</div>
 						<div class="space-y-5">
-							<h1 class="max-w-xl text-5xl font-semibold tracking-tight text-stone-900 sm:text-6xl">
-								Food for farm animals, from folks who finally logged off.
+							<p class="text-sm font-semibold uppercase tracking-[0.38em] text-[var(--olive-mid)]">Honest feed for practical animals</p>
+							<h1 class="max-w-3xl font-[var(--font-display)] text-5xl leading-[0.95] tracking-[-0.03em] text-[var(--ink-strong)] sm:text-6xl lg:text-7xl">
+								Food for the whole barn, sold like an old roadside market board.
 							</h1>
-							<p class="max-w-2xl text-lg leading-8 text-stone-700 sm:text-xl">
-								We were a bunch of software engineers burned out on AI-everything, so we retired to a farm and started doing something more useful: selling honest feed for chickens, goats, horses, rabbits, and the rest of the crew.
+							<p class="max-w-2xl text-lg leading-8 text-[var(--ink-soft)] sm:text-xl">
+								We were software engineers burned out on AI-everything, so we traded dashboards for dirt roads and started selling feed that feels calm, useful, and refreshingly normal.
 							</p>
 						</div>
 						<div class="flex flex-col gap-3 sm:flex-row">
 							<a
 								href="#feed"
-								class="inline-flex items-center justify-center rounded-full bg-emerald-900 px-6 py-3 text-base font-medium text-white transition hover:bg-emerald-800"
+								class="inline-flex items-center justify-center rounded-full border border-[rgba(47,61,35,0.9)] bg-[var(--olive-deep)] px-6 py-3 text-base font-medium text-[var(--paper)] transition duration-300 hover:-translate-y-0.5 hover:bg-[var(--olive-mid)]"
 							>
 								Shop the feed
 							</a>
 							<a
 								href="#story"
-								class="inline-flex items-center justify-center rounded-full border border-emerald-900/15 bg-white/70 px-6 py-3 text-base font-medium text-stone-800 transition hover:border-emerald-900/30 hover:bg-white"
+								class="inline-flex items-center justify-center rounded-full border border-[rgba(70,52,31,0.16)] bg-[rgba(255,250,240,0.78)] px-6 py-3 text-base font-medium text-[var(--ink)] transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(47,61,35,0.4)] hover:bg-[rgba(255,255,255,0.9)]"
 							>
 								Meet the herd
 							</a>
 						</div>
-						<div class="grid max-w-2xl gap-4 sm:grid-cols-3">
-							<div class="rounded-3xl border border-white/70 bg-white/70 p-4 shadow-sm shadow-emerald-950/5">
-								<p class="text-2xl font-semibold text-emerald-900">4</p>
-								<p class="mt-1 text-sm text-stone-600">barn-approved feed categories</p>
+						<div class="grid max-w-3xl gap-4 sm:grid-cols-3">
+							<div class="rounded-[1.8rem] border border-[rgba(70,52,31,0.12)] bg-[rgba(255,250,240,0.72)] p-5 shadow-[0_18px_40px_-34px_rgba(58,43,26,0.6)]">
+								<p class="font-[var(--font-display)] text-4xl leading-none text-[var(--olive-deep)]">4</p>
+								<p class="mt-2 text-sm leading-6 text-[var(--ink-soft)]">barn-approved feed categories</p>
 							</div>
-							<div class="rounded-3xl border border-white/70 bg-white/70 p-4 shadow-sm shadow-emerald-950/5">
-								<p class="text-2xl font-semibold text-emerald-900">0</p>
-								<p class="mt-1 text-sm text-stone-600">AI slogans on any bag, ever</p>
+							<div class="rounded-[1.8rem] border border-[rgba(70,52,31,0.12)] bg-[rgba(255,250,240,0.72)] p-5 shadow-[0_18px_40px_-34px_rgba(58,43,26,0.6)]">
+								<p class="font-[var(--font-display)] text-4xl leading-none text-[var(--olive-deep)]">0</p>
+								<p class="mt-2 text-sm leading-6 text-[var(--ink-soft)]">AI slogans on any bag, ever</p>
 							</div>
-							<div class="rounded-3xl border border-white/70 bg-white/70 p-4 shadow-sm shadow-emerald-950/5">
-								<p class="text-2xl font-semibold text-emerald-900">∞</p>
-								<p class="mt-1 text-sm text-stone-600">respect for a good quiet morning</p>
+							<div class="rounded-[1.8rem] border border-[rgba(70,52,31,0.12)] bg-[rgba(255,250,240,0.72)] p-5 shadow-[0_18px_40px_-34px_rgba(58,43,26,0.6)]">
+								<p class="font-[var(--font-display)] text-4xl leading-none text-[var(--olive-deep)]">Dawn</p>
+								<p class="mt-2 text-sm leading-6 text-[var(--ink-soft)]">preferred hour for chores, coffee, and loading bags</p>
 							</div>
 						</div>
 					</div>
 
-					<div class="relative">
-						<div class="rounded-[2rem] border border-emerald-950/10 bg-[#f4efdf] p-6 shadow-[0_30px_80px_-40px_rgba(61,77,48,0.5)] sm:p-8">
-							<div class="rounded-[1.5rem] bg-emerald-950 px-5 py-4 text-emerald-50">
-								<p class="text-sm uppercase tracking-[0.25em] text-emerald-200">Today at the farm</p>
-								<p class="mt-2 text-2xl font-semibold">The goats are loud, the hens are productive, and the feed room is fully stocked.</p>
-							</div>
-							<div class="mt-6 grid gap-4 sm:grid-cols-2">
-								<div class="rounded-[1.5rem] bg-[#dbe7cc] p-5">
-									<p class="text-sm font-medium uppercase tracking-[0.2em] text-emerald-900">Best for</p>
-									<p class="mt-3 text-xl font-semibold text-stone-900">Backyard flocks</p>
-									<p class="mt-2 text-sm leading-6 text-stone-700">Simple grain-forward blends for the chickens that run your whole property anyway.</p>
+					<div class="fade-in relative" style="animation-delay: 0.16s;">
+						<div class="absolute -left-4 top-10 hidden h-44 w-44 rounded-full border border-dashed border-[rgba(70,52,31,0.18)] lg:block"></div>
+						<div class="relative overflow-hidden rounded-[2.2rem] border border-[rgba(70,52,31,0.16)] bg-[linear-gradient(180deg,rgba(71,93,55,0.96),rgba(43,57,34,0.97))] p-6 text-[var(--paper)] shadow-[0_40px_90px_-42px_rgba(35,45,28,0.95)] sm:p-8">
+							<div class="absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent)]"></div>
+							<div class="absolute -right-16 -top-14 h-40 w-40 rounded-full bg-[rgba(239,204,144,0.18)] blur-2xl"></div>
+							<p class="text-sm uppercase tracking-[0.35em] text-[rgba(247,240,225,0.7)]">Today at the farm</p>
+							<h2 class="mt-4 max-w-md font-[var(--font-display)] text-4xl leading-tight text-[var(--paper)] sm:text-[2.9rem]">
+								The hens are productive, the goats are dramatic, and the feed room is full.
+							</h2>
+							<div class="mt-8 grid gap-4 sm:grid-cols-2">
+								<div class="rounded-[1.7rem] border border-white/12 bg-[rgba(255,248,236,0.1)] p-5 backdrop-blur-sm">
+									<p class="text-xs font-semibold uppercase tracking-[0.28em] text-[rgba(247,240,225,0.72)]">Best for</p>
+									<p class="mt-3 font-[var(--font-display)] text-2xl text-[var(--paper)]">Backyard flocks</p>
+									<p class="mt-2 text-sm leading-6 text-[rgba(247,240,225,0.84)]">Simple grain-forward blends for the chickens that run your property anyway.</p>
 								</div>
-								<div class="rounded-[1.5rem] bg-[#efe4c8] p-5">
-									<p class="text-sm font-medium uppercase tracking-[0.2em] text-amber-900">Best for</p>
-									<p class="mt-3 text-xl font-semibold text-stone-900">Goat diplomacy</p>
-									<p class="mt-2 text-sm leading-6 text-stone-700">Tough job, but a dependable bag of feed gets negotiations started.
-									</p>
+								<div class="rounded-[1.7rem] border border-white/12 bg-[rgba(255,248,236,0.1)] p-5 backdrop-blur-sm">
+									<p class="text-xs font-semibold uppercase tracking-[0.28em] text-[rgba(247,240,225,0.72)]">Best for</p>
+									<p class="mt-3 font-[var(--font-display)] text-2xl text-[var(--paper)]">Goat diplomacy</p>
+									<p class="mt-2 text-sm leading-6 text-[rgba(247,240,225,0.84)]">A dependable scoop of feed gets negotiations started with the fence-testers.</p>
 								</div>
 							</div>
-							<div class="mt-6 rounded-[1.5rem] border border-emerald-900/10 bg-white/70 p-5">
-								<p class="text-sm text-stone-600">What changed?</p>
-								<p class="mt-2 text-lg leading-7 text-stone-800">
-									Instead of optimizing for engagement, we optimize for healthy animals, easy chores, and bags you can trust.
+							<div class="mt-5 grid gap-3 rounded-[1.7rem] border border-white/12 bg-[rgba(255,248,236,0.08)] p-5 sm:grid-cols-[auto_1fr] sm:items-center">
+								<div class="rounded-[1.3rem] bg-[rgba(239,204,144,0.16)] px-4 py-3 text-center">
+									<p class="text-xs uppercase tracking-[0.28em] text-[rgba(247,240,225,0.7)]">Field note</p>
+									<p class="mt-2 font-[var(--font-display)] text-3xl">06:15</p>
+								</div>
+								<p class="text-sm leading-7 text-[rgba(247,240,225,0.86)]">
+									Instead of optimizing engagement, we optimize healthy animals, easier chores, and bags you can trust on a sleepy Tuesday morning.
 								</p>
 							</div>
 						</div>
 					</div>
 				</section>
 
-				<section id="feed" class="space-y-6">
-					<div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-						<div class="max-w-2xl space-y-3">
-							<p class="text-sm font-semibold uppercase tracking-[0.28em] text-emerald-800">Featured feed</p>
-							<h2 class="text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl">The staple stuff your animals actually want.</h2>
-							<p class="text-base leading-7 text-stone-700">
-								Nothing overcomplicated here. Just a tidy lineup of dependable feed for the creatures who make farm life interesting.
+				<section id="feed" class="fade-in space-y-7" style="animation-delay: 0.24s;">
+					<div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+						<div class="max-w-3xl space-y-4">
+							<p class="text-sm font-semibold uppercase tracking-[0.35em] text-[var(--olive-mid)]">Featured feed</p>
+							<h2 class="font-[var(--font-display)] text-4xl leading-tight tracking-[-0.02em] text-[var(--ink-strong)] sm:text-5xl">
+								The staple stuff your animals actually want.
+							</h2>
+							<p class="text-base leading-8 text-[var(--ink-soft)] sm:text-lg">
+								Set up like a tidy market board: clear categories, warm details, and zero pressure to decode nonsense packaging language.
 							</p>
 						</div>
-						<p class="text-sm text-stone-600">Practical inventory, warm barn energy.</p>
+						<p class="max-w-sm text-sm leading-6 text-[var(--ink-soft)]">Practical inventory, hand-painted-sign energy.</p>
 					</div>
 
 					<div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
 						{feedOptions.map((option) => (
-							<article class="group rounded-[1.75rem] border border-emerald-950/10 bg-white/70 p-5 shadow-sm shadow-emerald-950/5 backdrop-blur-sm transition hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-950/10">
-								<div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#dfead1] text-2xl">
-									🌾
+							<article class="group relative overflow-hidden rounded-[2rem] border border-[rgba(70,52,31,0.12)] bg-[rgba(255,250,240,0.72)] p-5 shadow-[0_24px_50px_-38px_rgba(58,43,26,0.75)] backdrop-blur-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_32px_70px_-34px_rgba(47,61,35,0.42)]">
+								<div class="absolute right-4 top-4 text-4xl opacity-12 transition duration-300 group-hover:scale-110 group-hover:opacity-20">{option.emoji}</div>
+								<div class={`inline-flex rounded-[1.25rem] px-4 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-[var(--ink)] ${option.tint}`}>
+									{option.icon}
 								</div>
-								<p class="mt-5 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-800">{option.accent}</p>
-								<h3 class="mt-3 text-2xl font-semibold text-stone-900">{option.title}</h3>
-								<p class="mt-3 text-sm leading-6 text-stone-700">{option.description}</p>
-								<a href="#" class="mt-5 inline-flex text-sm font-medium text-emerald-900 transition group-hover:text-emerald-700">
-									Browse options ->
+								<p class="mt-6 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--olive-mid)]">{option.accent}</p>
+								<h3 class="mt-3 font-[var(--font-display)] text-[2rem] leading-none text-[var(--ink-strong)]">{option.title}</h3>
+								<p class="mt-4 text-sm leading-7 text-[var(--ink-soft)]">{option.description}</p>
+								<a href="#" class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[var(--olive-deep)] transition duration-300 group-hover:gap-3 group-hover:text-[var(--olive-mid)]">
+									Browse options
+									<span aria-hidden="true">-></span>
 								</a>
 							</article>
 						))}
 					</div>
 				</section>
 
-				<section class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-					<div class="rounded-[2rem] bg-emerald-900 p-8 text-emerald-50 shadow-[0_30px_80px_-40px_rgba(18,54,38,0.9)]">
-						<p class="text-sm font-semibold uppercase tracking-[0.28em] text-emerald-200">Why folks like us</p>
-						<h2 class="mt-4 text-3xl font-semibold tracking-tight">A feed store with more dirt under its nails than buzzwords in its copy.</h2>
-						<div class="mt-6 space-y-4">
+				<section class="grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
+					<div class="fade-in overflow-hidden rounded-[2.2rem] border border-[rgba(70,52,31,0.12)] bg-[linear-gradient(180deg,rgba(88,65,41,0.96),rgba(63,48,31,0.98))] p-8 text-[var(--paper)] shadow-[0_34px_80px_-44px_rgba(63,48,31,0.95)]" style="animation-delay: 0.3s;">
+						<p class="text-sm font-semibold uppercase tracking-[0.3em] text-[rgba(247,240,225,0.72)]">Why folks like us</p>
+						<h2 class="mt-4 font-[var(--font-display)] text-4xl leading-tight tracking-[-0.02em]">A feed store with more dirt under its nails than buzzwords in its copy.</h2>
+						<div class="mt-8 space-y-4">
 							{reasons.map((reason) => (
-								<div class="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-									<div class="mt-1 h-2.5 w-2.5 rounded-full bg-lime-300"></div>
-									<p class="text-sm leading-6 text-emerald-50/90">{reason}</p>
+								<div class="rounded-[1.6rem] border border-white/10 bg-[rgba(255,245,227,0.08)] p-5 backdrop-blur-sm">
+									<p class="text-xs font-semibold uppercase tracking-[0.25em] text-[rgba(247,240,225,0.7)]">{reason.title}</p>
+									<p class="mt-3 text-sm leading-7 text-[rgba(247,240,225,0.9)]">{reason.copy}</p>
 								</div>
 							))}
 						</div>
 					</div>
 
-					<div id="story" class="rounded-[2rem] border border-emerald-950/10 bg-white/65 p-8 backdrop-blur-sm">
-						<p class="text-sm font-semibold uppercase tracking-[0.28em] text-emerald-800">Our story</p>
-						<h2 class="mt-4 text-3xl font-semibold tracking-tight text-stone-900">From shipping software to sweeping the feed room.</h2>
-						<p class="mt-5 text-base leading-8 text-stone-700">
-							Once upon a time we had standups, dashboards, and way too many tools trying to think for us. Now we have muddy boots, fresh air, and a straightforward job: keep the animals fed and the people who care for them well stocked.
-						</p>
-						<p class="mt-4 text-base leading-8 text-stone-700">
-							Farmagora is for folks who like a slower pace, useful products, and a store that sounds like a real person wrote it because, thankfully, one did.
-						</p>
-						<div class="mt-8 flex flex-wrap gap-3">
-							<span class="rounded-full bg-[#dfead1] px-4 py-2 text-sm font-medium text-emerald-900">Chicken keepers</span>
-							<span class="rounded-full bg-[#efe4c8] px-4 py-2 text-sm font-medium text-amber-950">Horse people</span>
-							<span class="rounded-full bg-[#e5ddd2] px-4 py-2 text-sm font-medium text-stone-800">Goat wranglers</span>
-							<span class="rounded-full bg-[#e4efe7] px-4 py-2 text-sm font-medium text-emerald-950">Rabbit fans</span>
+					<div id="story" class="fade-in rounded-[2.2rem] border border-[rgba(70,52,31,0.12)] bg-[rgba(255,250,240,0.72)] p-8 shadow-[0_30px_80px_-52px_rgba(70,52,31,0.55)] backdrop-blur-sm" style="animation-delay: 0.36s;">
+						<div class="grid gap-8 xl:grid-cols-[0.95fr_1.05fr] xl:items-start">
+							<div>
+								<p class="text-sm font-semibold uppercase tracking-[0.35em] text-[var(--olive-mid)]">Our story</p>
+								<h2 class="mt-4 font-[var(--font-display)] text-4xl leading-tight tracking-[-0.02em] text-[var(--ink-strong)] sm:text-[3.2rem]">
+									From shipping software to sweeping the feed room.
+								</h2>
+							</div>
+							<div class="space-y-5 text-base leading-8 text-[var(--ink-soft)]">
+								<p>
+									Once upon a time we had standups, dashboards, and way too many tools trying to think for us. Now we have muddy boots, fresh air, and a straightforward job: keep the animals fed and the people who care for them well stocked.
+								</p>
+								<p>
+									Farmagora is for folks who like a slower pace, useful products, and a store that sounds like a real person wrote it because, thankfully, one did.
+								</p>
+							</div>
+						</div>
+						<div class="mt-8 grid gap-4 md:grid-cols-[0.95fr_1.05fr]">
+							<div class="rounded-[1.8rem] border border-dashed border-[rgba(70,52,31,0.18)] bg-[rgba(255,255,255,0.35)] p-5">
+								<p class="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--olive-mid)]">Store mood</p>
+								<p class="mt-3 font-[var(--font-display)] text-3xl leading-tight text-[var(--ink-strong)]">Quiet morning. Screen-free. Bags stacked neatly.</p>
+							</div>
+							<div class="rounded-[1.8rem] bg-[linear-gradient(135deg,rgba(223,234,209,0.86),rgba(239,228,200,0.86))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]">
+								<p class="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--olive-deep)]">Who we feed</p>
+								<div class="mt-4 flex flex-wrap gap-3 text-sm font-medium text-[var(--ink)]">
+									<span class="rounded-full bg-[rgba(255,250,240,0.72)] px-4 py-2">Chicken keepers</span>
+									<span class="rounded-full bg-[rgba(255,250,240,0.72)] px-4 py-2">Horse people</span>
+									<span class="rounded-full bg-[rgba(255,250,240,0.72)] px-4 py-2">Goat wranglers</span>
+									<span class="rounded-full bg-[rgba(255,250,240,0.72)] px-4 py-2">Rabbit fans</span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
 
-				<section class="rounded-[2rem] border border-emerald-950/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.82),rgba(223,234,209,0.78))] p-8 shadow-sm shadow-emerald-950/5 sm:p-10">
-					<div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-						<div class="max-w-2xl">
-							<p class="text-sm font-semibold uppercase tracking-[0.28em] text-emerald-800">Drop by the barn</p>
-							<h2 class="mt-3 text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl">Good feed, calm vibes, and absolutely no one asking you to prompt engineer anything.</h2>
-							<p class="mt-4 text-base leading-7 text-stone-700">
+				<section class="fade-in rounded-[2.2rem] border border-[rgba(70,52,31,0.12)] bg-[linear-gradient(135deg,rgba(255,249,237,0.92),rgba(232,223,194,0.84))] p-8 shadow-[0_24px_60px_-42px_rgba(70,52,31,0.45)] sm:p-10" style="animation-delay: 0.42s;">
+					<div class="flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
+						<div class="max-w-3xl">
+							<p class="text-sm font-semibold uppercase tracking-[0.35em] text-[var(--olive-mid)]">Drop by the barn</p>
+							<h2 class="mt-3 font-[var(--font-display)] text-4xl leading-tight tracking-[-0.02em] text-[var(--ink-strong)] sm:text-5xl">
+								Good feed, calm vibes, and absolutely no one asking you to prompt engineer anything.
+							</h2>
+							<p class="mt-4 text-base leading-8 text-[var(--ink-soft)] sm:text-lg">
 								If your animals need the basics and you need a break from the internet, you are very much our kind of customer.
 							</p>
 						</div>
 						<a
 							href="#"
-							class="inline-flex items-center justify-center rounded-full bg-stone-900 px-6 py-3 text-base font-medium text-stone-50 transition hover:bg-stone-800"
+							class="inline-flex items-center justify-center rounded-full border border-[rgba(47,61,35,0.9)] bg-[var(--ink-strong)] px-6 py-3 text-base font-medium text-[var(--paper)] transition duration-300 hover:-translate-y-0.5 hover:bg-[var(--olive-deep)]"
 						>
 							See what's in stock
 						</a>
 					</div>
 				</section>
 
-				<footer class="pb-8 text-sm text-stone-600">
+				<footer class="px-1 pb-8 pt-2 text-sm text-[var(--ink-soft)]">
 					<p>Farmagora - retired engineers, active farmers, dependable feed.</p>
 				</footer>
 			</main>
