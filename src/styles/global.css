@@ -2,8 +2,18 @@
 
 :root {
 	color-scheme: light;
-	font-family: "Avenir Next", "Segoe UI", sans-serif;
-	background-color: #f8f4e7;
+	font-family: var(--font-body);
+	--font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "URW Palladio L", serif;
+	--font-body: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+	--bg-base: #f5ecd9;
+	--paper: #fbf4e6;
+	--paper-deep: #efe3c5;
+	--olive-deep: #34472a;
+	--olive-mid: #60784d;
+	--ink: #46341f;
+	--ink-strong: #2d2114;
+	--ink-soft: #6c5941;
+	background-color: var(--bg-base);
 }
 
 html {
@@ -13,12 +23,56 @@ html {
 body {
 	margin: 0;
 	min-width: 320px;
+	font-family: var(--font-body);
 	background:
-		radial-gradient(circle at top, rgba(233, 241, 221, 0.9), transparent 38%),
-		linear-gradient(180deg, #f8f4e7 0%, #f4efdf 100%);
+		radial-gradient(circle at top, rgba(248, 229, 190, 0.58), transparent 34%),
+		radial-gradient(circle at 12% 22%, rgba(163, 184, 129, 0.18), transparent 28%),
+		linear-gradient(180deg, #f9f1df 0%, #f2e7d0 52%, #efe1c7 100%);
+	color: var(--ink);
 }
 
 ::selection {
-	background: rgba(95, 126, 75, 0.22);
-	color: #1c2418;
+	background: rgba(95, 126, 75, 0.24);
+	color: #1f2718;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.page-grain {
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)),
+		radial-gradient(rgba(70, 52, 31, 0.045) 0.7px, transparent 0.7px);
+	background-position: 0 0, 0 0;
+	background-size: auto, 7px 7px;
+}
+
+.fade-in {
+	opacity: 0;
+	animation: rise-in 0.8s ease-out forwards;
+}
+
+@keyframes rise-in {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	.fade-in {
+		opacity: 1;
+		animation: none;
+	}
 }
